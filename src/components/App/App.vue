@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     add(evt) {
-        List.add(evt);
+        // List.add(evt);
         console.log('bb');
       
     }
