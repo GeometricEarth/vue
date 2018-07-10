@@ -19,7 +19,7 @@
     </ul> -->
   
   
-  <list></list>
+  <list v-bind:test="add()"></list>
   <field v-on:newQuestion='add'></field>
   </div>
 </template>
@@ -38,14 +38,14 @@ export default {
   },
   data () {
     return {
-
+      test: 'Test linck',
     }
   },
   methods: {
     add(evt) {
-        // List.add(evt);
         console.log('bb');
-      
+        // this.test.dt = evt
+        return evt;
     }
   },
 }
