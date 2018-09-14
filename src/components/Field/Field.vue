@@ -46,7 +46,7 @@
 
 
 <script>
-import style from '../Field/field.css';
+import style from "../Field/field.css";
 
 export default {
   name: "Field",
@@ -71,20 +71,13 @@ export default {
       inputs.forEach(element => {
         question.answers.push(element.value);
       });
-
-      let new_question = new CustomEvent("new_question", {
-        detail: question
-      });
-    //   this.dispatchEvent(new_question);
-    this.$emit('newQuestion', question);
-    // console.log(this);
-    // console.dir(data);
+    
+      this.$emit("newQuestion", question);
       this.$el.scrollIntoView(false);
     }
   },
   data() {
     return {
-      questions: []
     };
   }
 };

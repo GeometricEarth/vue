@@ -19,7 +19,7 @@
     </ul> -->
   
   
-  <list v-bind:test="add()"></list>
+  <list v-bind:questions="questions" ind="test"></list>
   <field v-on:newQuestion='add'></field>
   </div>
 </template>
@@ -38,14 +38,15 @@ export default {
   },
   data () {
     return {
-      test: 'Test linck',
+      test:{title: 'Test linck'} ,
+      questions: [],
     }
   },
   methods: {
     add(evt) {
-        console.log('bb');
-        // this.test.dt = evt
-        return evt;
+        console.log(this.questions);
+        evt.id=this.questions.length+1;
+        this.questions.push(evt);
     }
   },
 }
