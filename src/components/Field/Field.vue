@@ -2,10 +2,16 @@
     <form class="field" v-on:submit.prevent='save_Question'>
         <h2 class="field_header">Добавить вопрос</h2>
 
-        <img class="field_load_img" src="../../assets/no-image-icon.png">
+        <img class="field_load_img" v-bind:src="img" >
 
-        <textarea class="field_question" name="question" placeholder="Текст вопроса"
-        rows="4" spellcheck autocomplete="off"></textarea>
+        <textarea class="field_question" 
+            name="question" 
+            placeholder="Текст вопроса"
+            rows="4" 
+            spellcheck 
+            autocomplete="off"
+            v-model="question">
+        </textarea>
         <div>
             <div class="roundedOne">
                 <input type="radio" id="roundedOne1" name="true" value="1"/>
@@ -78,6 +84,10 @@ export default {
   },
   data() {
     return {
+        question: null,
+        true_answer: null,
+        img: "./src/assets/no-image-icon.png",
+        answers: [],
     };
   }
 };
