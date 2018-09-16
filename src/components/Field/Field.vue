@@ -12,6 +12,7 @@
             autocomplete="off"
             v-model="data.question">
         </textarea>
+        <span v-if="questionLenght>120">Вы слишком многословны, сократите вопрос на {{questionLenght-120}} символов</span>
         <div>
             <div class="roundedOne">
                 <input type="radio" id="roundedOne1" name="true" value="1" v-model="data.true_answer"/>
@@ -58,11 +59,11 @@ export default {
   name: "Field",
   methods: {
     save_Question: function(event) {
-      event.preventDefault();
+    //   event.preventDefault();
       this.$emit("newQuestion", this.data);
       this.data = {
-        question: null,
-        true_answer: null,
+        question: "",
+        true_answer: "",
         img: "./src/assets/no-image-icon.png",
         answers: []
       };
@@ -70,15 +71,17 @@ export default {
     }
   },
   computed: {
-    questionLenght: function() {}
+    questionLenght: function() {
+        return this.data.question.length
+    }
     //TODO: ограничение длины вопроса 120 символов
   },
 
   data() {
     return {
       data: {
-        question: null,
-        true_answer: null,
+        question: "",
+        true_answer: "",
         img: "./src/assets/no-image-icon.png",
         answers: []
       }
