@@ -39,14 +39,11 @@ export default {
     return {};
   },
   props: ["questions"],
-  watch: {
-    // questions: function() {
-    //     console.dir(this.questions);
-    // }
+  computed: {
+   
   },
   methods: {
     expand(event) {
-      console.dir(event.target);
       if (event.target) {
         let target = event.target.closest(
           ".question-accordion" || event.target
@@ -62,10 +59,9 @@ export default {
     },
     edit(id) {
       console.log("hoocked " + id);
-      
     },
     delite(id) {
-        this.questions.splice(id, 1);
+      this.questions.splice(id, 1);
     }
   }
 };
