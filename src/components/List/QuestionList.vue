@@ -32,6 +32,11 @@
 <script>
 import style from "./question__list.css";
 
+// TODO: Подготовить два css класса focus и edit. Реализовать подстановку классов 
+// для проигрывания времени и редактирования
+
+// TODO: Реализовать круглый SVG таймер со слайдером выбора времени отображения вопроса
+
 // console.dir(this.$root)
 
 export default {
